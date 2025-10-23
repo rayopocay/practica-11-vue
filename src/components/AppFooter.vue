@@ -23,17 +23,12 @@
         </div>
       </div>
       <div class="mt-8 text-center">
-        <p>© {{ currentYear }} Ministerio de Educación, Ciencia y Tecnología. Todos los derechos reservados.</p>
+        <p>© 2025 Ministerio de Educación, Ciencia y Tecnología. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
-
-const currentYear = ref(new Date().getFullYear());
-</script>
 
 <style scoped>
 .site-footer {
