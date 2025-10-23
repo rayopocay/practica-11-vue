@@ -2,9 +2,9 @@
   <AppMenu />
   <nav class="shadow-1">
     <router-link to="/">Home</router-link> |
-    <router-link to="/consultas">Consultas</router-link>
-    <router-link to="/evento">Eventos tributarios</router-link>
-    <router-link to="/servicios">Servicios</router-link>
+    <router-link to="/about">Servicio</router-link>
+    <router-link to="/trabajo">programas </router-link>
+    <router-link to="/educacion">Educacion</router-link>
   </nav>
   <router-view/>
   <AppFooter />
@@ -13,21 +13,12 @@
 <script>
 import AppFooter from './components/AppFooter.vue'
 import AppMenu from './components/AppMenu.vue'
-import Contactanos from './views/Contactanos.vue';
-import Planificacion from './views/Planificacion.vue';
-import Marco from './views/Marco.vue';
-import Trabajo from './views/Trabajo.vue';
-import AboutView from './views/AboutView.vue';
+
 
 export default {
   components: {
     AppFooter,
     AppMenu,
-    Contactanos,
-    Planificacion,
-    Marco,
-    Trabajo,
-    AboutView
   }
 }
 </script>
