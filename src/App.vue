@@ -13,11 +13,21 @@
 <script>
 import AppFooter from './components/AppFooter.vue'
 import AppMenu from './components/AppMenu.vue'
+import Contactanos from './views/Contactanos.vue';
+import Planificacion from './views/Planificacion.vue';
+import Marco from './views/Marco.vue';
+import Trabajo from './views/Trabajo.vue';
+import AboutView from './views/AboutView.vue';
 
 export default {
   components: {
     AppFooter,
-    AppMenu
+    AppMenu,
+    Contactanos,
+    Planificacion,
+    Marco,
+    Trabajo,
+    AboutView
   }
 }
 </script>
