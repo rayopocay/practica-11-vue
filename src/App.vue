@@ -2,9 +2,11 @@
   <AppMenu />
   <nav class="shadow-1">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">Servicio</router-link>
-    <router-link to="/trabajo">programas </router-link>
-    <router-link to="/educacion">Educacion</router-link>
+    <router-link to="/servicios">Servicio</router-link>
+    <router-link to="/programas">programas </router-link>
+    <router-link to="/educacion">Institución</router-link>
+    <router-link to="/directorio">Directorio</router-link>
+    <router-link to="/educacion">Oreganismos Internacionales</router-link>
   </nav>
   <router-view/>
   <AppFooter />

@@ -1,10 +1,10 @@
 <template>
   <div class="body-inicio">
-    <!-- <img src="../assets/fachada.png" alt="" class="img-back-mh"> -->
+    <img src="../assets/banner_juego.png" alt="" class="img-back-mh">
   </div>
   <div class="servicio shadow-1">
     <div class="flex">
-      <!-- <img src="../assets/Servicios.svg" alt="" class="img-back">  -->
+      <img src="../assets/Servicios.svg" alt="" class="img-back"> 
        <p>Servicios Frecuentes</p>
     </div>
   </div>

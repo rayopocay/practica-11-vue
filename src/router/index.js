@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Contactanos from '../views/Contactanos.vue'
-import Planificacion from '../views/Planificacion.vue'
-import Marco from '.../views/Marco.vue'
-import Trabajo from '../views/Trabajo.vue'
-import AboutView from '../views/AboutView.vue'
+import ContactanosView from '@/views/ContactanosView.vue'
+import EducacionView from '@/views/EducacionView.vue'
+import DirectorioView from '@/views/DirectorioView.vue'
+import ProgramaView from '@/views/ProgramaView.vue'
+import OrganismoView from '@/views/OrganismoView.vue'
 
 const routes = [
   {
@@ -13,8 +13,8 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/servicios',
+    name: 'servicios',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -23,27 +23,27 @@ const routes = [
   {
     path: '/contactanos',
     name: 'contactanos',
-    component: Contactanos
+    component: ContactanosView
   },
   {
     path: '/educacion',
     name: 'educacion',
-    component: Planificacion
+    component: EducacionView
   },
   {
-    path: '/marco',
-    name: 'marco',
-    component: Marco
+    path: '/directorio',
+    name: 'directorio',
+    component: DirectorioView
   },
   {
-    path: '/trabajo',
-    name: 'trabajo',
-    component: Trabajo
+    path: '/programas',
+    name: 'programas',
+    component: ProgramaView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView
+    path: '/organismo',
+    name: 'organismo',
+    component: OrganismoView
   }
 ]
 
