@@ -5,6 +5,7 @@ import EducacionView from '@/views/EducacionView.vue'
 import DirectorioView from '@/views/DirectorioView.vue'
 import ProgramaView from '@/views/ProgramaView.vue'
 import OrganismoView from '@/views/OrganismoView.vue'
+import HorarioView from '@/views/HorarioView.vue'
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     path: '/organismo',
     name: 'organismo',
     component: OrganismoView
+  },
+  {
+    path: '/horarios',
+    name: 'horarios',
+    component: HorarioView
   }
 ]
 

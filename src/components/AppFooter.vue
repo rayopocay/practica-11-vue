@@ -55,7 +55,7 @@ function scrollToTop() {
 
 <style scoped>
 .footer-programas {
-  background-color: #2b3548;
+  background-color: #363D4D;
   color: #ffffff;
   padding: 60px 20px;
   font-family: "Arial", sans-serif;

@@ -30,11 +30,23 @@
           <router-link to="/directorio">Directorio</router-link>
         </li>
         <li>
-          <router-link to="/directorio/formulario">Horarios de atención</router-link>
+          <router-link to="/horarios">Horarios de atención</router-link>
         </li>
       </ul>
     </div>
-    <router-link to="/organismo">Organismo Internacionales</router-link>
+
+    <div class="dropdown">
+      
+      <button @click="toggleMenu('organismo')" class="dropdown-toggle">
+        Organismo Internacionales ▾
+      </button>
+      
+      <ul v-show="menuAbierto === 'organismo'" class="dropdown-menu">
+        <li>
+          <router-link to="/organismo">Banco Mundial</router-link>
+        </li>
+      </ul>
+    </div>
   </nav>
   <router-view/>
   <AppFooter />
@@ -43,7 +55,7 @@
 <script>
 import AppFooter from './components/AppFooter.vue'
 import AppMenu from './components/AppMenu.vue'
-import { ref } from 'vue' // La importación está bien aquí
+import { ref, onMounted, onUnmounted } from 'vue'
 
 export default {
   components: {
@@ -55,20 +67,46 @@ export default {
   // 1. Añade la función setup()
   setup() {
     
-    // 2. Mueve tu lógica DENTRO de setup()
     const menuAbierto = ref(null)
 
     function toggleMenu(nombreMenu) {
       if (menuAbierto.value === nombreMenu) {
-        // Si haces clic en el menú que ya está abierto, ciérralo
         menuAbierto.value = null
       } else {
-        // Si no, abre este menú
         menuAbierto.value = nombreMenu
       }
     }
 
-    // 3. RETORNA las variables y funciones que usa el template
+    // --- LÓGICA NUEVA PARA CERRAR AL HACER CLIC FUERA ---
+
+    // 2. Esta función se ejecutará en CADA clic en la página
+    function handleClickOutside(event) {
+      // event.target es el elemento exacto donde se hizo clic
+      // .closest('.dropdown') busca hacia arriba si el clic
+      // fue DENTRO de un elemento con la clase 'dropdown'
+      
+      if (!event.target.closest('.dropdown')) {
+        // Si no encuentra un '.dropdown' (devuelve null),
+        // significa que el clic fue FUERA.
+        menuAbierto.value = null // Cierra cualquier menú que esté abierto
+      }
+    }
+
+    // 3. Hook onMounted: Se ejecuta cuando el componente está listo
+    onMounted(() => {
+      // Agregamos el listener a la ventana
+      window.addEventListener('click', handleClickOutside);
+    });
+
+    // 4. Hook onUnmounted: Se ejecuta cuando el componente se destruye
+    onUnmounted(() => {
+      // Quitamos el listener para evitar problemas de memoria
+      window.removeEventListener('click', handleClickOutside);
+    });
+
+    // --- FIN DE LA LÓGICA NUEVA ---
+
+    // Retornamos todo lo que el template necesita
     return {
       menuAbierto,
       toggleMenu
@@ -120,9 +158,8 @@ nav a,
   padding-right: 1.5rem;
   padding-bottom: 0.8rem;
   padding-left: 0.9rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-decoration: none;
-  font-size: 18px; /* Tu estilo de fuente */
 }
 
 .dropdown-toggle {
@@ -130,6 +167,7 @@ nav a,
   border: none;
   cursor: pointer;
   font-family: inherit; /* Hereda la fuente del nav */
+  font-size: 15px;
 }
 
 nav a:hover,

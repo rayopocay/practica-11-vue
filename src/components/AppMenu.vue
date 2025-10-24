@@ -16,6 +16,6 @@
 
 .img-mh {
     height: 117px;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 </style>
