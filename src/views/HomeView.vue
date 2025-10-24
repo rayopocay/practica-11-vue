@@ -53,50 +53,31 @@
        <p>Avisos</p>
     </div>
   </div>
-  <div class="subfooter">
-    <div class="opcion-foo">
-      <div class="opcion-foo-col"> 
-        <div class="conten-fooder">
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>
-            Estadísticas Educativas
-          </h3>
+  <div class="directorio-container">
+        <!-- Secciones inferiores -->
+        <div class="sections">
+            <div class="section-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Estadísticas Educativas</span>
+            </div>
+            <div class="section-item">
+                <i class="fas fa-download"></i>
+                <span>Descargas</span>
+            </div>
+            <div class="section-item">
+                <i class="fas fa-question-circle"></i>
+                <span>Preguntas Frecuentes</span>
+            </div>
+            <div class="section-item">
+                <i class="fas fa-book-open"></i>
+                <span>Programas</span>
+            </div>
+            <div class="section-item">
+                <i class="fas fa-bullhorn"></i>
+                <span>Avisos</span>
+            </div>
         </div>
-      </div>
-      <div class="opcion-foo-col"> 
-        <div class="conten-fooder">
-          <i class="fa-solid fa-cloud-arrow-down"></i>
-          <h3> 
-            Descargas
-          </h3>
-        </div>
-      </div>
-      <div class="opcion-foo-col"> 
-        <div class="conten-fooder">
-          <i class="fa-regular fa-circle-question"></i>
-          <h3> 
-            Preguntas Frecuentes
-          </h3>
-        </div>
-      </div>
-      <div class="opcion-foo-col"> 
-        <div class="conten-fooder">
-          <i class="fa-solid fa-users"></i>
-          <h3> 
-            Programas
-          </h3>
-        </div>
-      </div>
-      <div class="opcion-foo-col"> 
-        <div class="conten-fooder">
-          <i class="fa-regular fa-bell"></i>
-          <h3> 
-            Avisos
-          </h3>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -139,6 +120,10 @@ p {
   padding: 10px 0px;
 }
 
+.opciones .opciones-col h3 {
+  font-weight: normal;
+}
+
 .imagen-mh {
   display: flex;      
   justify-content: center; 
@@ -160,34 +145,49 @@ p {
   display: block;
 }
 
-.subfooter {
+.directorio-container {
   background-color: #29303C;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.opcion-foo {
+.sections {
   display: flex;
-  align-items: center; 
-  padding: 10px 0 40px;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-wrap: wrap; 
-  gap: 70px;
+  gap: 30px;
 }
 
-.opcion-foo .opcion-foo-col {
-  color: #fff;
-  flex-basis: 100px;
+.section-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  padding: 20px;
+  background-color: #2b3b5f;
+  border-radius: 8px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.section-item:hover {
+  background-color: #3c4f7a;
+}
+
+.section-item i {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.section-item span {
+  font-size: 0.95rem;
   text-align: center;
-  padding: 10px 0px;
 }
 
-.opcion-foo .opcion-foo-col .conten-fooder h3 {
-  letter-spacing: 0.1em;
-}
-
-.opcion-foo .opcion-foo-col .conten-fooder i {
-  font-size: 50px;
-  padding-bottom: 15px;
-}
 
 .servicio .flex img {
   width: 48px;

@@ -9,7 +9,12 @@
     </div>
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">Inicio &gt; Directorio</nav>
+    <div class="mini-menu">
+        <p>
+            <router-link to="/">Inicio</router-link> >
+            <span>Educación superior</span>
+        </p>
+    </div>
 
     <!-- Información principal -->
     <div class="info">
@@ -50,6 +55,15 @@
 </script>
 
 <style scoped>
+.mini-menu{
+    text-align: center;
+    padding: 15px 0;
+}
+
+.mini-menu a {
+    color: #fff;
+}
+
 .directorio-container {
   background-color: #1e2a4a;
   color: white;
